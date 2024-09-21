@@ -47,7 +47,16 @@ public class AbhiBus {
 		WebElement element3=driver.findElement(By.xpath("//div[@class='seat-fare col auto']/div/div"));
 		String totalfare=element3.getText();
 		System.out.println("Total Fare:" +totalfare);
+
 		
+		String title  = driver.getTitle();
+		if (title.contains("Chennai to Bangalore")) {
+			System.out.println("Verified");
+		}
+		else {
+			System.out.println("Not Verified");
+		}
+		driver.close();
 	}
 }
 
